@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="MsgApp"
+  <head>
+    <meta charset="utf-8">
+    <script src="js\angular.min.js" charset="utf-8"></script>
+    <script src="js\app.js" charset="utf-8"></script>
+    <style> img {height: 100px;} </style>
+    <title>Expressions and Interpolation</title>
+  </head>
+  <body>
+    <h1>Expressions and Interpolation</h1>
+    <div ng-controller="MsgController">
+      Message from {{name}}:
+      <br />
+      {{sayMessage()}}
+
+      <div>
+        <button ng-click = "lightMe()">Light {{name}} up!</button>
+          <br />
+          <img ng-src="images/me_{{stateOfBrightness}}.png" />
+      </div>
+    </div>
+  </body>
+</html>
