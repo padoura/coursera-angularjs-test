@@ -3,7 +3,7 @@
   angular.module('myFirstApp', [])
 
   .controller('MyFirstController', function ($scope){
-    $scope.name = "Michalis";
+    $scope.name = "padoura";
     $scope.sayHello = function () {
       return "Hello Coursera"
     }
