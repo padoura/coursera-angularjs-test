@@ -1,19 +1,25 @@
 (function () {
 'use strict';
 
-angular.module('MsgApp', [])
-.controller(
-  'MsgController', MsgController);
+angular.module('msgApp', [])
+.controller('MsgCtrl', MsgCtrl)
+  .filter('dollarSymbol', DollarSymbolFilter);
 
-  MsgController.$inject = ['$scope', '$filter'];
+  MsgController.$inject = ['$scope', '$filter', 'dollarSymbolFilter'];
 
-  function MsgController ($scope, $filter) {
+  function MsgCtrl ($scope, $filter, dollarSymbolFilter) {
     $scope.name = "Michalis";
     $scope.stateOfBrightness = "dark";
 
     $scope.sayMessage = function () {
-      var message = "This is a message from " + $scope.name + "!";
+      var message = "This is an example of uppercase filter!";
       var output = $filter('uppercase')(message);
+      return output;
+    };
+
+    $scope.sayPrice = function () {
+      var price = 0.5;
+      var output = $filter('currency')(price, "€", 2);
       return output;
     };
 
@@ -22,5 +28,13 @@ angular.module('MsgApp', [])
     }
 
   };
+
+  function DollarSymbolFilter() {
+    return function (input){
+      input = input || "";
+      input = input.replace("€", "$");
+      return input;
+    }
+  }
 
 })();

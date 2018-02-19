@@ -11,6 +11,7 @@ angular.module('LunchCheck', [])
     $scope.dishes = "";
     $scope.messageColor = "";
     $scope.borderColor = "";
+    $scope.message = "";
 
     $scope.checkLunchAmount = function () {
       var numItems = getNonEmptyItemList().length;

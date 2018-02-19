@@ -1,19 +1,22 @@
 <!DOCTYPE html>
-<html ng-app="MsgApp"
+<html ng-app="msgApp"
   <head>
     <meta charset="utf-8">
     <script src="js\angular.min.js" charset="utf-8"></script>
     <script src="js\app.js" charset="utf-8"></script>
     <style> img {height: 100px;} </style>
-    <title>Expressions and Interpolation</title>
+    <title>Expressions, Interpolation and Filters</title>
   </head>
   <body>
-    <h1>Expressions and Interpolation</h1>
-    <div ng-controller="MsgController">
+    <h1>Expressions, Interpolation and Filters</h1>
+    <div ng-controller="MsgCtrl">
       Message from {{name}}:
       <br />
       {{sayMessage()}}
-
+      <br />
+      This is a currency filter test: {{sayPrice()}}
+      <br />
+      This is a custom filter test: {{sayPrice() | dollarSymbol}}
       <div>
         <button ng-click = "lightMe()">Light {{name}} up!</button>
           <br />
