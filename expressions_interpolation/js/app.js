@@ -5,14 +5,16 @@ angular.module('MsgApp', [])
 .controller(
   'MsgController', MsgController);
 
-  MsgController.$inject = ['$scope'];
+  MsgController.$inject = ['$scope', '$filter'];
 
-  function MsgController ($scope) {
+  function MsgController ($scope, $filter) {
     $scope.name = "Michalis";
     $scope.stateOfBrightness = "dark";
 
     $scope.sayMessage = function () {
-      return "This is a message from " + $scope.name + "!"
+      var message = "This is a message from " + $scope.name + "!";
+      var output = $filter('uppercase')(message);
+      return output;
     };
 
     $scope.lightMe = function (){
