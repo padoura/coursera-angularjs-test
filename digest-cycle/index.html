@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html ng-app="counterApp"
+  <head>
+    <meta charset="utf-8">
+    <style> body {font-size: 1.2em;} </style>
+    <title>The Digest Cycle</title>
+  </head>
+  <body>
+    <h1>The Digest Cycle</h1>
+    <div ng-controller="CounterCtrl">
+      <input type="text" ng-model="test">
+      <br />
+      <button ng-click="showNumberOfWatchers()">
+        Log # of Watchers</button>
+        <br />
+        <button ng-click="countOnce()">
+          Count Once</button>
+        <br />
+        <button ng-click="incrementalCount()">
+          Count Incrementally</button>
+        <br />
+        <button ng-click="incrementalDigestCount()">
+            Count with Timeout and $digest</button>
+        <br />
+        <button ng-click="incrementalApplyCount()">
+            Count with Timeout and $apply</button>
+        <br />
+        <button ng-click="incrementalAngularCount()">
+            Count with $timeout</button>
+        <br />
+            <p>Once Counter: {{onceCounter}}</p>
+            <p>Counter: {{counter}}</p>
+
+    </div>
+
+
+    <script src="js\angular.min.js" charset="utf-8"></script>
+    <script src="js\app.js" charset="utf-8"></script>
+  </body>
+</html>
