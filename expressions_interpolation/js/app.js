@@ -3,11 +3,11 @@
 
 angular.module('msgApp', [])
 .controller('MsgCtrl', MsgCtrl)
-  .filter('dollarSymbol', DollarSymbolFilter);
+  .filter('changeCurrency', ChangeCurrencyFilter);
 
-  MsgController.$inject = ['$scope', '$filter', 'dollarSymbolFilter'];
+  MsgCtrl.$inject = ['$scope', '$filter'];
 
-  function MsgCtrl ($scope, $filter, dollarSymbolFilter) {
+  function MsgCtrl ($scope, $filter) {
     $scope.name = "Michalis";
     $scope.stateOfBrightness = "dark";
 
@@ -29,10 +29,10 @@ angular.module('msgApp', [])
 
   };
 
-  function DollarSymbolFilter() {
-    return function (input){
+  function ChangeCurrencyFilter() {
+    return function (input, symbol){
       input = input || "";
-      input = input.replace("€", "$");
+      input = input.replace("€", symbol);
       return input;
     }
   }

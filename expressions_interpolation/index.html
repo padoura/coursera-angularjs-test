@@ -16,7 +16,9 @@
       <br />
       This is a currency filter test: {{sayPrice()}}
       <br />
-      This is a custom filter test: {{sayPrice() | dollarSymbol}}
+      This is a custom filter test: {{sayPrice() | changeCurrency : "$"}}
+      <br />
+      This is a chaining filter test: {{0.50 | currency : "€" | changeCurrency : "¥"}}
       <div>
         <button ng-click = "lightMe()">Light {{name}} up!</button>
           <br />
